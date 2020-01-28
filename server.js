@@ -39,7 +39,7 @@ app.get("/profile/:id", (req, res) => profile.profileHandler(req, res, db))
 app.put("/image", (req, res ) => image.imageHandler(req, res, db))
 app.post("/imageApi", (req, res ) => image.imageApiHandler(req, res))
 
-app.listen(3000, ()=>{ 
+app.listen(process.env.PORT || 3000, ()=>{ 
 
-	console.log("server is running on port 3000")
+	console.log(`server is running on port ${process.env.PORT}`)
 })
